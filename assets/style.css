@@ -1,0 +1,244 @@
+/* Global Styles */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    background-color: #F0F0F0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #333333; /* Neutral text color */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 5% 95%;
+    overflow: hidden;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #005D4A;
+    color: #FAFAFA;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+   color: #007B5F;
+   font-weight: 300;
+   padding-top: 0;
+}
+
+p {
+    font-size: 11px;
+}
+
+
+.logo {
+    height: 60px;
+}
+
+.header-title {
+    font-size: 27px;
+    font-weight: 300;
+}
+
+/* Content Layout */
+.content-layout {
+    display: grid;
+    grid-template-columns: 16% 54% 30%; /* Side panel, data cards, predictive model */
+    gap: 20px;
+    padding: 20px;
+    padding-left: 15px;
+    height: calc(100vh - 80px); /* Remaining space after the header */
+    box-sizing: border-box;
+}
+
+/* Side Panel */
+.side-column {
+    background: #007B5F;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: calc(100% - 60px); /* Leave space below the predictive model */
+}
+
+.side-button {
+    background: transparent;
+    color: white; /* Neutral text */
+    border: none;
+    border-radius: 8px;
+    padding: 10px; /* Adjust padding for better spacing */
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Aligns text and icon vertically */
+    gap: 10px; /* Reduce the space between the icon and text */
+    transition: all 0.3s ease;
+}
+
+.side-column:hover {
+    background-color: #A9D5C6;
+}
+
+/* Data Cards Layout */
+.left-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two cards per row */
+    grid-template-rows: repeat(2, 8.2cm); /* Set height of each row */
+    gap: 20px; /* Space between cards */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top:10px;
+    height: calc(100vh - 150px); /* Adjust height based on viewport */
+    box-sizing: border-box; /* Include padding in calculations */
+     scrollbar-width: none; /* For Firefox: hide scrollbar */
+}
+.left-column::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge: hide scrollbar */
+}
+
+/* Data Cards */
+.data-card {
+    background-color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    color: #333333;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Align content properly */
+    overflow: hidden;
+}
+
+/* Specific styles for the pie chart card */
+#pie-chart {
+    width: 100%; /* Full width within its container */
+    height: 180px; /* Fixed height for consistency */
+    max-width: 300px; /* Optional: Maximum width */
+    margin: 0 auto; /* Center the chart inside the container */
+}
+
+/* Text description for the pie chart */
+#pie-chart + p {
+    font-size: 11.5px; /* Font size for the description */
+    color: #555555; /* Light gray text color */
+    margin-top: 10px;
+}
+
+/* Prediction Model */
+.prediction-card {
+    background-color: #FFFFFF; /* White for cleanliness */
+      border: 2px solid #E0E0E0;
+    color: #333333;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top:10px;
+    height: calc(100% - 50px); /* Leave space below the predictive model */
+    box-sizing: border-box;
+    width: 360px
+}
+
+/* Parent container for inputs */
+.input-group {
+    display: flex;
+    flex-wrap: wrap; /* Wraps fields to the next row if needed */
+    gap: 20px; /* Space between fields */
+    justify-content: space-between; /* Aligns items with space between them */
+    margin-bottom: 30px; /* Space at the bottom of the container */
+}
+
+/* Individual input containers */
+.input-container {
+    width: 45%; /* Each field takes up 45% of the row for two columns */
+    display: flex;
+    flex-direction: column; /* Ensures labels stay on top */
+}
+
+/* Labels */
+.input-container label {
+    font-size: 11px;
+    color: #3C3C3C; /* Charcoal gray for labels */
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+.input-container input,
+.input-container select {
+    height: 9px; /* Adjust height for usability */
+    padding: 7px;
+    border: 2px solid #cccc;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #3C3C3C; /* Charcoal gray for text */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Placeholder styling */
+.input-container input::placeholder,
+.input-container select::placeholder {
+    color: #9E9E9E; /* Light gray placeholder text */
+    font-size: 13px;
+}
+
+/* Focus state */
+.input-container input:focus,
+.input-container select:focus {
+    outline: none;
+    border-color: #007F3B; /* Emerald green border on focus */
+    box-shadow: 0 0 5px rgba(0, 127, 59, 0.5); /* Soft emerald glow */
+}
+
+
+/* Buttons */
+#predict-button {
+    background-color: #007B5F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    width: 90px;
+    padding: 10px;
+    font-size: 14px;
+    height: 33px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #005D4A;
+    transform: scale(1.02);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content-layout {
+        grid-template-columns: 1fr; /* Stack sections vertically */
+        grid-template-rows: auto auto auto;
+        gap: 10px;
+    }
+
+    .left-column {
+        grid-template-columns: 1fr; /* One card per row */
+        grid-template-rows: repeat(4, 6cm); /* Four rows of fixed height */
+    }
+
+    .prediction-card {
+        height: auto; /* Adjust dynamically */
+    }
+}
+
+
+
+
